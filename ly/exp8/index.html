@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+
+		<title>21LY找茬小游戏</title>
+
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				text-decoration: none;
+			}
+
+			body {
+				background-color: #FFA500;
+			}
+
+			#back {
+				width: 300px;
+				height: 500px;
+				background: #000;
+				margin: 0px auto;
+				padding: 50px 50px 0;
+				position: absolute;
+				z-index: 1000;
+				top: 0;
+				left: 0;
+				right: 0;
+				opacity: 0.8;
+				display: none;
+			}
+
+			h1 {
+				text-align: center;
+				padding-top: 200px;
+				font-size: 50px;
+			}
+
+			h1 a {
+				color: #fff;
+			}
+
+			.container {
+				width: 300px;
+				height: 500px;
+				background: #aeaeae;
+				padding: 50px 50px 0;
+				position: relative;
+				/* left:50%; */
+				/* top:50%;    */
+				/* margin-left:-150px; */
+				/* margin-top:-250px; */
+				margin: 60px auto;
+				border-radius: 50px;
+			}
+
+			.left {
+				float: left;
+			}
+
+			.right {
+				float: right;
+			}
+
+			.main {
+				width: 300px;
+				margin: 80px auto 20px;
+				background: orange;
+				text-align: center;
+			}
+
+			.list1 {
+				width: 100%;
+			}
+
+			.list1>img {
+				width: 100%;
+				display: block;
+			}
+
+			button {
+				width: 200px;
+				margin: 0 auto;
+				height: 40px;
+				border: 0;
+				border-radius: 10px;
+				background: linear-gradient(#59AD42, #319428);
+				color: #fff;
+				font-size: 20px;
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			button:hover {
+				background: linear-gradient(#319428, #59AD42);
+			}
+
+			img {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<audio src="bgm.mp3" autoplay="autoplay"></audio>
+		<embed src="bgm.mp3" hidden="true" loop="loop" />
+		<div id="back">
+			<h1><a href=''>重新开始</a></h1>
+		</div>
+		<div class="container">
+			<div class="left"><span>剩余时间：</span><span id="sec">30</span>s</div>
+			<div class="right"><span>分数：</span><span id="score">0</span></div>
+			<div class="main">
+				<ul>
+					<li class="list1"><img src="img/4.png" </li> </ul> </div> <button>来了您内~</button>
+			</div>
+			<script type="text/javascript" src="./game.js"></script>
+	</body>
+</html>

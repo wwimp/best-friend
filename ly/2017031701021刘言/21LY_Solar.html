@@ -1,0 +1,44 @@
+<!DOCTYPE html>	<!--表示文档类型为HTML文档-->
+<html>
+	<head><!--文档头部-->
+		<!--使用UTF-8字符编码，无此句在某些浏览器会出现乱码-->
+		<meta charset = "utf-8">
+		<!--文档标题，会显示在网页标题栏-->
+		<title>2017031701021刘言</title>
+	</head>
+	
+	<body><!--文档主体-->
+		<!--绘图区域的id，以及宽度和高度，用WebGL绘制的图形将显示在该canvas中-->
+		<canvas id="webgl" width="900" height="540">
+		对不起，你的浏览器不支持HTML5的canvas元素！<!--出错时显示这句话-->
+		</canvas>
+		
+		<!--以下为用到的shader程序和JavaScript程序，程序类型由type属性决定，
+		顶点Shader程序和片元Shader程序有id，因为在JavaScript程序中需要对其
+		进行访问，而JavaScript程序无id-->
+		
+		<!--顶点Shader程序-->
+		<script id="vertex-shader" type="x-shader/x-vertex">
+		attribute vec3 a_Position;	// 输入三维顶点坐标
+		uniform mat4 u_MVPMatrix;	// 模视投影矩阵
+		void main(){
+			// 计算裁剪坐标系下坐标
+			gl_Position = u_MVPMatrix * vec4(a_Position, 1.0);	
+		}
+		</script>
+		<!--片元Shader程序-->
+		<script id="fragment-shader" type="x-shader/x-fragment">
+		precision mediump float;	// 浮点数精度为中等
+		uniform vec3 u_Color;	 	// 应用程序指定的片元颜色
+		void main(){
+			gl_FragColor = vec4(u_Color, 1.0);
+		}
+		</script>
+		<!--下面是辅助我们进行程序编写的3个JavaScript程序-->
+		<script type="text/javascript" src="./Common/webgl-utils.js"></script>
+		<script type="text/javascript" src="./Common/initShaders.js"></script>
+		<script type="text/javascript" src="./Common/MV.js"></script>
+		<!--主程序-->
+		<script type="text/javascript" src="21LY_Solar.js"></script>
+	</body>
+</html>
